@@ -8,7 +8,7 @@
 
 ## Overview
 The application was inspired by chat examples found on **libp2p**'s pubsub library, but is more evolved and fully featured version of it.   
-It uses a *Kademlia DHT* from **libp2p** for peer discovery and routing and supports a more fully featured host. The other components of the **libp2p** such as *TLS* encryption, peer active discovery, *YAMUX* stream multiplexing are integrated as well. 
+It uses a [*Kademlia DHT*](/docs/Kademlia.md) from [**libp2p**](#libp2p) for peer discovery and routing and supports a more fully featured host. The other components of the **libp2p** such as *TLS* encryption, peer active discovery, *YAMUX* stream multiplexing are integrated as well. 
 
 The application also allows users to jump between different chat rooms without having to restart the application and they can also change their usernames at any point.
 
@@ -17,7 +17,7 @@ The application works for two nodes on the same network or on different networks
 Communcation between nodes on different private networks is working from *v0.1.0-alpha*.
 
 ## Dependancies
-### libp2p
+### {#libp2p}
 **libp2p** is a modular networking stack library born out of The **IPFS Project**.   
 **IllChat**'s P2P and GossipSub layers are built using the Go implementation of **libp2p**.
 
@@ -70,16 +70,16 @@ The following starts the application and joins the *hang-out* chat room as a use
 illchat -user Boognish -room hang-out
 ```
 
-The method of peer discovery method can be modified using the ``-discover`` flag. Valid values are *announce* and *advertise*. The application defaults to the *advertise*. This value should only changed if peer connections aren't being established with the default method.
+The method of peer discovery method can be modified using the ``-discover`` flag. Valid values are *announce* and *advertise*. The application defaults to *advertise*, and generally this would be how all host/peers would initiate. This value should only changed if peer connections aren't being established with the default method, and we would likely never allow a user to set this flag, rather, it would be automated with a connection algorithm. 
 
-The loglevel for the application startup runtime can be modified using the ``-log`` flag. Valid values are *trace*, *debug*, *info*, *warn*, *error*, *fatal* and *panic*. The application defaults to *info*. This value is meant for development and debuggin only.
+The loglevel for the application startup runtime can be modified using the ``-log`` flag. Valid values are *trace*, *debug*, *info*, *warn*, *error*, *fatal* and *panic*. The application defaults to *info*.
 
 
 ## Future Development Tragectory (Fall 2023 / Winter 2024)
-- Integrated HQ & low bandwidth audio functionality for realtime multiparty voice communication
+- Integrated HQ, low bandwidth audio functionality for realtime multiparty voice communications
 - Support for WebSocket transport layers for external notification channels
-- Migration to Protobuf instead of JSON for message encoding
-- Notifications for IllChat system events, user joins, leaves, mutes, etc.
+- Refactor to use `Protobuf` instead of `JSON` for message encoding
+- Notifications for Illfonic backend system events; user joins, leaves, mutes, etc.
 - Support for other PubSub routers (RandomSub, FloodSub or EpiSub)
 - Integration wrappers for Unreal Engine 4/5 UNetDrivers with `goc`
 

@@ -9,8 +9,9 @@ import (
 	"github.com/rivo/tview"
 )
 
-// Represents the app version
-const appversion = "v1.1.0"
+// TODO: App version
+// this should be based on the build system, not hard coded
+const appversion = "v0.1.0-alpha"
 
 // A structure that represents the ChatRoom UI
 type UI struct {
@@ -91,7 +92,7 @@ func NewUI(cr *ChatRoom) *UI {
 	peerbox.
 		SetBorder(true).
 		SetBorderColor(tcell.ColorWhite).
-		SetTitle("Peers").
+		SetTitle("Peers UUID ").
 		SetTitleAlign(tview.AlignLeft).
 		SetTitleColor(tcell.ColorWhite)
 
