@@ -2,7 +2,7 @@
 ![Banner](banner.png)
 ### A terminal-based P2P chat application using libp2p and Golang that uses a Kademlia DHT and the IPFS network for peer discovery and routing
 
-**Version: 1.0**  
+**Version: v0.1.0-alpha**  
 **Platform: Windows, Mac OSX and Linux**  
 **Language: Go >= 1.16**   
 
@@ -14,11 +14,11 @@ The application also allows users to jump between different chat rooms without h
 
 The application works for two nodes on the same network or on different networks. Nodes that are behind *NAT*s on private network are able to communicate with each other because the application attempts to configure the router automatically using *UPnP* and also uses *AutoRelay* (TURN) to facilitate the connection between private nodes by discovering relay nodes and connecting to them.
 
-Note: Communcation between nodes on different private networks works only from *v1.1.0*.
+Communcation between nodes on different private networks is working from *v0.1.0-alpha*.
 
 ## Dependancies
 ### libp2p
-**libp2p** is a modular network stack library born out of The **IPFS Project**.   
+**libp2p** is a modular networking stack library born out of The **IPFS Project**.   
 **IllChat**'s P2P and GossipSub layers are built using the Go implementation of **libp2p**.
 
 [**go-libp2p Repository**](https://github.com/libp2p/go-libp2p)  
@@ -75,9 +75,11 @@ The method of peer discovery method can be modified using the ``-discover`` flag
 The loglevel for the application startup runtime can be modified using the ``-log`` flag. Valid values are *trace*, *debug*, *info*, *warn*, *error*, *fatal* and *panic*. The application defaults to *info*. This value is meant for development and debuggin only.
 
 
-## Future Development
-- Support WebSocket transport
-- Migrate to Protocol Buffers instead of JSON for message encoding
-- Chat Room notification for when user changes names
-- Support for other PubSub routers (RandomSub, FloodSub and someday EpiSub)
+## Future Development Tragectory (Fall 2023 / Winter 2024)
+- Integrated HQ & low bandwidth audio functionality for realtime multiparty voice communication
+- Support for WebSocket transport layers for external notification channels
+- Migration to Protobuf instead of JSON for message encoding
+- Notifications for IllChat system events, user joins, leaves, mutes, etc.
+- Support for other PubSub routers (RandomSub, FloodSub or EpiSub)
+- Integration wrappers for Unreal Engine 4/5 UNetDrivers with `goc`
 
