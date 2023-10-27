@@ -8,7 +8,7 @@
 
 ## Overview
 The application was inspired by chat examples found on **libp2p**'s pubsub library, but is more evolved and fully featured version of it.   
-It uses a [*Kademlia DHT*](/docs/Kademlia.md) from [**libp2p**](#libp2p) for peer discovery and routing and supports a more fully featured host. The other components of the **libp2p** such as *TLS* encryption, peer active discovery, *YAMUX* stream multiplexing are integrated as well. 
+It uses a [*Kademlia DHT*](./docs/Kademlia.md) from [**libp2p**](#libp2p) for peer discovery and routing and supports a more fully featured host. The other components of the **libp2p** such as *TLS* encryption, peer active discovery, *YAMUX* stream multiplexing are integrated as well. 
 
 The application also allows users to jump between different chat rooms without having to restart the application and they can also change their usernames at any point.
 
