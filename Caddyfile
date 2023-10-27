@@ -1,0 +1,11 @@
+{
+  local_certs
+}
+
+https://192.168.2.127 {
+  bind 192.168.2.127
+  tls internal
+
+  reverse_proxy localhost:19000
+}
+
