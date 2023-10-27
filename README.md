@@ -17,7 +17,7 @@ The application works for two nodes on the same network or on different networks
 Communcation between nodes on different private networks is working from *v0.1.0-alpha*.
 
 ## Dependancies
-### {#libp2p}
+### #libp2p
 **libp2p** is a modular networking stack library born out of The **IPFS Project**.   
 **IllChat**'s P2P and GossipSub layers are built using the Go implementation of **libp2p**.
 
